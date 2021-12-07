@@ -4,8 +4,8 @@ public record ProductRequest
 {
     private uint MIN_QUANTITY = 1;
 
-    public string Description { get; set; } = default!;
-    public uint Quantity { get; set; }
+    public string Description { get; init; } = default!;
+    public uint Quantity { get; init; }
 
     public string? Validate()
     {

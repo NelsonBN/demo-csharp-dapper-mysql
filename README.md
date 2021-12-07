@@ -33,7 +33,7 @@ docker network create --driver=bridge demos
 #### Run MySQL container
 [Docker image](https://hub.docker.com/_/mysql)
 ```bash
-docker run -d --name demo-mysql --net demos -e MYSQL_ALLOW_EMPTY_PASSWORD=yes -p 3306:3306 -v ./data/database-init.sql:/docker-entrypoint-initdb.d/database-init.sql mysql:8.0.27
+docker run -d --name demo-mysql --net demos -e MYSQL_ALLOW_EMPTY_PASSWORD=yes -p 3306:3306 -v $(pwd)/data/database-init.sql:/docker-entrypoint-initdb.d/database-init.sql mysql:8.0.27
 ```
 * `-e MYSQL_ALLOW_EMPTY_PASSWORD=yes` to start container without password.
 * `-p 3306:3306` to expose port 3306 to host machine.
